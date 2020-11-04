@@ -15,7 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".InsurancePlanActivity"></activity>
         <activity android:name=".activity.InsuranceCompanyActivity" />
         <activity android:name=".activity.TravelLocationActivity" />
         <activity android:name=".activity.HomeActivity" />
