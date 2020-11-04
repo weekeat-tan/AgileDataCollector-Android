@@ -39,11 +39,11 @@ public class TravelLocationActivity extends AppCompatActivity {
     }
 
     public void viewTravelInsuranceCompanyRecommendationForSelectedCountry(View view) {
-//        String selectedRequest = view.getTag().toString();
-//        Intent intent = new Intent(this, InsuranceCompanyActivity.class);
-//        intent.putExtra("selectedRequest", selectedRequest);
-//
-//        startActivity(intent);
+        String selectedRequest = view.getTag().toString();
+        Intent intent = new Intent(this, InsuranceCompanyActivity.class);
+        intent.putExtra("selectedRequest", selectedRequest);
+
+        startActivity(intent);
     }
 
     private void initializeView() {
