@@ -56,31 +56,31 @@ public class MainActivity extends AppCompatActivity {
         this.password = findViewById(R.id.password);
     }
 
-//    public void login(View view) {
-//        String usernameInput = this.username.getText().toString();
-//        String passwordInput = this.password.getText().toString();
-//
-//        if (usernameInput.equals(getString(R.string.user1)) && passwordInput.equals("password")) {
-//
-//            MyApp.sharedPreferences.edit().putString("currentUser", getString(R.string.user1)).apply();
-//            Toast.makeText(MainActivity.this, "Logged in successfully as " + getString(R.string.user1) + "!", Toast.LENGTH_LONG).show();
-//            Intent intent = new Intent(this, HomeActivity.class);
-//            startActivity(intent);
-//
-//        } else if (usernameInput.equals(getString(R.string.user2)) && passwordInput.equals("password")) {
-//
-//            MyApp.sharedPreferences.edit().putString("currentUser", getString(R.string.user2)).apply();
-//            Toast.makeText(MainActivity.this, "Logged in successfully as " + getString(R.string.user2) + "!", Toast.LENGTH_LONG).show();
-//            Intent intent = new Intent(this, HomeActivity.class);
-//            startActivity(intent);
-//
-//        } else {
-//
-//            Toast.makeText(MainActivity.this, "Invalid login credentials! Please try again!", Toast.LENGTH_LONG).show();
-//
-//        }
-//
-//        InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
-//        inputMethodManager.hideSoftInputFromWindow(view.getApplicationWindowToken(),0);
-//    }
+    public void login(View view) {
+        String usernameInput = this.username.getText().toString();
+        String passwordInput = this.password.getText().toString();
+
+        if (usernameInput.equals(getString(R.string.user1)) && passwordInput.equals("password")) {
+
+            MyApp.sharedPreferences.edit().putString("currentUser", getString(R.string.user1)).apply();
+            Toast.makeText(MainActivity.this, "Logged in successfully as " + getString(R.string.user1) + "!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+
+        } else if (usernameInput.equals(getString(R.string.user2)) && passwordInput.equals("password")) {
+
+            MyApp.sharedPreferences.edit().putString("currentUser", getString(R.string.user2)).apply();
+            Toast.makeText(MainActivity.this, "Logged in successfully as " + getString(R.string.user2) + "!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+
+        } else {
+
+            Toast.makeText(MainActivity.this, "Invalid login credentials! Please try again!", Toast.LENGTH_LONG).show();
+
+        }
+
+        InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getApplicationWindowToken(),0);
+    }
 }
