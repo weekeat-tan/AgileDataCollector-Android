@@ -251,7 +251,7 @@ public class InsurancePlanActivity extends AppCompatActivity {
                     } else if (plan.equals("Deluxe")) {
                         listDataChildValues.put(plan, Arrays.asList("$200,000", "$500,000", "As Charged", "$10,000", "$1,000", "$1,000"));
                     } else {
-                        listDataChildValues.put(plan, Arrays.asList("$500,000", "2,000,000", "As Charged", "$15,000", "$2,000", "$1,000"));
+                        listDataChildValues.put(plan, Arrays.asList("$500,000", "$2,000,000", "As Charged", "$15,000", "$2,000", "$1,000"));
                     }
                 }
                 break;
@@ -263,7 +263,7 @@ public class InsurancePlanActivity extends AppCompatActivity {
                     } else if (plan.equals("Easy")) {
                         listDataChildValues.put(plan, Arrays.asList("$150,000", "$250,000", "$500,000", "$5,000", "$500", "$1,000"));
                     } else {
-                        listDataChildValues.put(plan, Arrays.asList("$500,000", "300,000", "Unlimited", "$6,000", "$800", "$1,000"));
+                        listDataChildValues.put(plan, Arrays.asList("$500,000", "$300,000", "Unlimited", "$6,000", "$800", "$1,000"));
                     }
                 }
                 break;
