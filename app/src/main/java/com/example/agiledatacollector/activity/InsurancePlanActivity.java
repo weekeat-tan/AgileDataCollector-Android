@@ -3,9 +3,12 @@ package com.example.agiledatacollector.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -320,6 +323,16 @@ public class InsurancePlanActivity extends AppCompatActivity {
     }
 
     public void subscribe(View view) {
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialog_subscribed);
 
+        Button buttonAcknowledge = dialog.findViewById(R.id.buttonAcknowledge);
+
+        buttonAcknowledge.setOnClickListener(view1 -> {
+            Intent intent = new Intent(InsurancePlanActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+
+        dialog.show();
     }
 }
