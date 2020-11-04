@@ -44,10 +44,9 @@
             android:background="@drawable/rounded_button"
             android:backgroundTint="#73ABBF"
             android:drawableTint="#FFFFFF"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:onClick="subscribe"
-            android:paddingStart="20dp"
-            android:paddingEnd="18dp"
+            android:paddingHorizontal="18dp"
             android:text="Subscribe"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
@@ -80,7 +79,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Travel Insurance Plan" />
-
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.cardview.widget.CardView
@@ -89,22 +87,45 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="8dp"
         android:backgroundTint="#EBEFF3"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tabLayout">
 
         <TextView
             android:id="@+id/textViewCompanyDescription"
-            android:justificationMode="inter_word"
-            android:textSize="16sp"
-            android:lineSpacingMultiplier="1.25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
+            android:justificationMode="inter_word"
+            android:lineSpacingMultiplier="1.25"
             android:text="Company Description"
-            android:textColor="#042E4C" />
-
+            android:textColor="#042E4C"
+            android:textSize="16sp" />
     </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginVertical="8dp"
+        android:layout_marginTop="160dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ExpandableListView
+                android:id="@+id/expandableListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
