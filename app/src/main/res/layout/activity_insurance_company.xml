@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context=".activity.InsuranceCompanyActivity">
+
+    <TextView
+        android:id="@+id/textViewSelectedCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        android:text="Country"
+        android:textColor="#042E4C"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.progressindicator.ProgressIndicator
+        android:id="@+id/progressIndicatorInsuranceCompanies"
+        style="@style/Widget.MaterialComponents.ProgressIndicator.Circular.Indeterminate"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewSelectedCountry" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutInsuranceCompanies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewSelectedCountry">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/table_header"
+                android:padding="12dp"
+                android:text="Company"
+                android:textColor="#042E4C"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@id/textViewTableHeaderPrice"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewTableHeaderPrice"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/table_header"
+                android:padding="12dp"
+                android:text="Price"
+                android:textColor="#042E4C"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutCompany1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="viewTravelInsurancePlanRecommendation">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:background="@drawable/table_cell"
+                android:orientation="vertical"
+                android:padding="12dp"
+                app:layout_constraintEnd_toStartOf="@id/textViewPrice1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textViewCompany1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Company 1"
+                    android:textColor="#042E4C"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewCompanySlogan1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Slogan 1"
+                    android:textColor="#E9ECED"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewPrice1"
+                android:layout_width="125dp"
+                android:layout_height="100dp"
+                android:background="@drawable/table_cell"
+                android:gravity="center_vertical"
+                android:padding="12dp"
+                android:text="Price 1"
+                android:textColor="#042E4C"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutCompany2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="viewTravelInsurancePlanRecommendation">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:background="@drawable/table_cell"
+                android:orientation="vertical"
+                android:padding="12dp"
+                app:layout_constraintEnd_toStartOf="@id/textViewPrice2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textViewCompany2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Company 2"
+                    android:textColor="#042E4C"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewCompanySlogan2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Slogan 2"
+                    android:textColor="#E9ECED"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewPrice2"
+                android:layout_width="125dp"
+                android:layout_height="100dp"
+                android:background="@drawable/table_cell"
+                android:gravity="center_vertical"
+                android:padding="12dp"
+                android:text="Price 2"
+                android:textColor="#042E4C"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutCompany3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="viewTravelInsurancePlanRecommendation">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:background="@drawable/table_cell"
+                android:orientation="vertical"
+                android:padding="12dp"
+                app:layout_constraintEnd_toStartOf="@id/textViewPrice3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textViewCompany3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Company 3"
+                    android:textColor="#042E4C"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewCompanySlogan3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Slogan 3"
+                    android:textColor="#E9ECED"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewPrice3"
+                android:layout_width="125dp"
+                android:layout_height="100dp"
+                android:background="@drawable/table_cell"
+                android:gravity="center_vertical"
+                android:padding="12dp"
+                android:text="Price 3"
+                android:textColor="#042E4C"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutCompany4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="viewTravelInsurancePlanRecommendation">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:background="@drawable/table_cell"
+                android:orientation="vertical"
+                android:padding="12dp"
+                app:layout_constraintEnd_toStartOf="@id/textViewPrice4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textViewCompany4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Company 4"
+                    android:textColor="#042E4C"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewCompanySlogan4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Slogan 4"
+                    android:textColor="#E9ECED"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewPrice4"
+                android:layout_width="125dp"
+                android:layout_height="100dp"
+                android:background="@drawable/table_cell"
+                android:gravity="center_vertical"
+                android:padding="12dp"
+                android:text="Price 4"
+                android:textColor="#042E4C"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
