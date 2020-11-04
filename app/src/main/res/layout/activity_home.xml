@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context=".activity.HomeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutSummaryDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Summary Dashboard"
+                android:textColor="#042E4C"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Average Income TTM:"
+                    android:textColor="#042E4C"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewAverageIncome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="$1234.56"
+                    android:textColor="#0E5080"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Average Expense TTM:"
+                    android:textColor="#042E4C"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewAverageExpense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="$1234.56"
+                    android:textColor="#0E5080"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/lineSeparatorSummaryDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#0C324E"
+            app:layout_constraintTop_toBottomOf="@id/linearLayoutSummaryDashboard" />
+
+        <TextView
+            android:id="@+id/textViewTransactionHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Transaction History"
+            android:textColor="#042E4C"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/lineSeparatorSummaryDashboard" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutTransactionHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewTransactionHistory">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="6dp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#B0CEE3"
+                android:orientation="vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp">
+
+                <TextView
+                    android:id="@+id/textViewTransactionDate1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transaction Date 1"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewTransactionHistory1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6sp"
+                    android:text="Transaction History 1"
+                    android:textColor="#042E4C"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Debit Card Transaction"
+                        android:textColor="#042E4C"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/textViewTransactionPrice1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Transaction Price 1"
+                        android:textAlignment="textEnd"
+                        android:textColor="#042E4C"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="6dp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#B0CEE3"
+                android:orientation="vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp">
+
+                <TextView
+                    android:id="@+id/textViewTransactionDate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transaction Date 2"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewTransactionHistory2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6sp"
+                    android:text="Transaction History 2"
+                    android:textColor="#042E4C"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Debit Card Transaction"
+                        android:textColor="#042E4C"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/textViewTransactionPrice2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Transaction Price 2"
+                        android:textAlignment="textEnd"
+                        android:textColor="#042E4C"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/lineSeparatorTransactionHistory"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#0C324E"
+            app:layout_constraintTop_toBottomOf="@id/linearLayoutTransactionHistory" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayoutInsuranceRecommendation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lineSeparatorTransactionHistory">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Insurance Recommendation"
+                android:textColor="#042E4C"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.progressindicator.ProgressIndicator
+                android:id="@+id/progressIndicatorInsuranceRecommendation"
+                style="@style/Widget.MaterialComponents.ProgressIndicator.Circular.Indeterminate"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:visibility="gone" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollViewInsuranceRecommendation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/companyLogo1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/logo_final" />
+
+                    <ImageView
+                        android:id="@+id/companyLogo2"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="12dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/logo_final" />
+
+                    <ImageView
+                        android:id="@+id/companyLogo3"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="12dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/logo_final" />
+
+                    <ImageView
+                        android:id="@+id/companyLogo4"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="12dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/logo_final" />
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/lineSeparatorInsuranceRecommendation"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#0C324E"
+            app:layout_constraintTop_toBottomOf="@id/linearLayoutInsuranceRecommendation" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lineSeparatorInsuranceRecommendation">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#73ABBF"
+                android:drawableEnd="@drawable/right_arrow"
+                android:drawableTint="#FFFFFF"
+                android:drawableTintMode="src_in"
+                android:gravity="left|center_vertical"
+                android:onClick="viewTravelInsuranceRecommendation"
+                android:paddingStart="20dp"
+                android:paddingEnd="18dp"
+                android:text="Travel Insurance"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#73ABBF"
+                android:drawableEnd="@drawable/right_arrow"
+                android:drawableTint="#FFFFFF"
+                android:drawableTintMode="src_in"
+                android:gravity="left|center_vertical"
+                android:paddingStart="20dp"
+                android:paddingEnd="18dp"
+                android:text="Medical Insurance"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#73ABBF"
+                android:drawableEnd="@drawable/right_arrow"
+                android:drawableTint="#FFFFFF"
+                android:drawableTintMode="src_in"
+                android:gravity="left|center_vertical"
+                android:paddingStart="20dp"
+                android:paddingEnd="18dp"
+                android:text="Home Insurance"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
