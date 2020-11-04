@@ -101,7 +101,7 @@ public class InsuranceCompanyActivity extends AppCompatActivity {
 
         if (request != null) {
 
-            this.textViewSelectedCountry.setText(request.getDest_country() + " (" + request.getDept_date() + " - " + request.getReturn_date() + ")");
+            this.textViewSelectedCountry.setText(request.getDest_country() + "\n(" + request.getDept_date() + " - " + request.getReturn_date() + ")");
 
             Call<GetTravelInsuranceCompanyRecommendationResponse> call = api.getTravelInsuranceCompanyRecommendation(request);
 
