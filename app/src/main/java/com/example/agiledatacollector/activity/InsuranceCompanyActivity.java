@@ -204,11 +204,11 @@ public class InsuranceCompanyActivity extends AppCompatActivity {
         String selectedCompany = view.getTag().toString();
         String selectedRequest = getIntent().getExtras().getString("selectedRequest");
 
-//        Intent intent = new Intent(this, InsurancePlanActivity.class);
-//        intent.putExtra("selectedRequest", selectedRequest);
-//        intent.putExtra("selectedCompany", selectedCompany);
-//
-//        startActivity(intent);
+        Intent intent = new Intent(this, InsurancePlanActivity.class);
+        intent.putExtra("selectedRequest", selectedRequest);
+        intent.putExtra("selectedCompany", selectedCompany);
+
+        startActivity(intent);
     }
 
 }

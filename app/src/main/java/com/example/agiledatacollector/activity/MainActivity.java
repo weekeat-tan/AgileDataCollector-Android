@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         MyApp.sharedPreferences = getSharedPreferences("AgileDataCollector", Context.MODE_PRIVATE);
-//        MyApp.recommendationResponses = new ArrayList<>();
+        MyApp.recommendationResponses = new ArrayList<>();
 
         this.getWindow().getDecorView().setSystemUiVisibility(flags);
         this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
