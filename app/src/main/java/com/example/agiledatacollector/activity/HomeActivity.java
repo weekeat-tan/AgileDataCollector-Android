@@ -157,6 +157,75 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void doGetTravelInsuranceRecommendation() {
+//        if (currentUser != null) {
+//
+//            initializeFlightPurchaseHistory(currentUser);
+//            // [ AIA AXA Allianze Aviva ]
+//            doGetTravelInsuranceRecommendation();
+//
+//            new Handler().postDelayed(() -> {
+//                this.progressIndicatorInsuranceRecommendation.setVisibility(View.GONE);
+//                this.horizontalScrollViewInsuranceRecommendation.setVisibility(View.VISIBLE);
+//            }, 5000);
+//        }
+    }
+
+//    public void viewTravelInsuranceRecommendation(View view) {
+//        Intent intent = new Intent(this, TravelLocationActivity.class);
+//        startActivity(intent);
+//    }
+//
+//    private void initializeFlightPurchaseHistory(String user) {
+//        if (user.equals(getString(R.string.user1))) {
+//            AVG_INCOME_TTM = 3476.88;
+//            AVG_EXPENSE_TTM = 1759.99;
+//
+//            this.textViewAverageIncome.setText(AVG_INCOME_TTM.toString());
+//            this.textViewAverageExpense.setText(AVG_EXPENSE_TTM.toString());
+//
+//            // Outcome: AIA
+//            MyApp.req1 = new GetTravelInsuranceCompanyRecommendationRequest(1001, AVG_INCOME_TTM, AVG_EXPENSE_TTM, ORI_COUNTRY, "China", true, false,
+//                    1024.63, 3, "2020/10/22", "2021/02/02", "2021/02/23", 3, "1983/04/24", "1988/09/08", "1993/04/13", "");
+//
+//            this.textViewTransactionDate1.setText("MON, 26 OCT 2020");
+//            this.textViewTransactionHistory1.setText("FLYSCOOT.00000000CDVKH3 22 OCT");
+//            this.textViewTransactionPrice1.setText("SGD -1024.63");
+//
+//            // Outcome: AXA
+//            MyApp.req2 = new GetTravelInsuranceCompanyRecommendationRequest(1002, AVG_INCOME_TTM, AVG_EXPENSE_TTM, ORI_COUNTRY, "Malaysia", false, true,
+//                    1685.12, 0, "2020/10/28", "2021/02/08", "2021/02/26", 1, "1982/10/03", "1987/02/26", "1988/03/16", ""
+//            );
+//
+//            this.textViewTransactionDate2.setText("FRI, 30 OCT 2020");
+//            this.textViewTransactionHistory2.setText("Singapore Airlines MSIAH8 28 OCT");
+//            this.textViewTransactionPrice2.setText("SGD -1685.12");
+//        } else if (user.equals(getString(R.string.user2))) {
+//            AVG_INCOME_TTM = 6181.49;
+//            AVG_EXPENSE_TTM = 2404.25;
+//
+//            this.textViewAverageIncome.setText(AVG_INCOME_TTM.toString());
+//            this.textViewAverageExpense.setText(AVG_EXPENSE_TTM.toString());
+//
+//            // Outcome: AIA
+//            MyApp.req1 = new GetTravelInsuranceCompanyRecommendationRequest(1003, AVG_INCOME_TTM, AVG_EXPENSE_TTM, ORI_COUNTRY, "United States", true, false,
+//                    1782.78, 2, "2020/10/14", "2021/02/07", "2021/03/21", 2, "1974/01/21", "2010/07/09", "", "");
+//
+//            this.textViewTransactionDate1.setText("FRI, 16 OCT 2020");
+//            this.textViewTransactionHistory1.setText("Qatar Airways QTUS3F 14 OCT");
+//            this.textViewTransactionPrice1.setText("SGD -1782.78");
+//
+//            // Outcome: Allianze
+//            MyApp.req2 = new GetTravelInsuranceCompanyRecommendationRequest(1004, AVG_INCOME_TTM, AVG_EXPENSE_TTM, ORI_COUNTRY, "Taiwan", false, true,
+//                    838.08, 0, "2020/10/19", "2021/02/01", "2021/03/26", 3, "2007/12/22", "1987/02/26", "1988/03/16", ""
+//            );
+//
+//            this.textViewTransactionDate2.setText("WED, 21 OCT 2020");
+//            this.textViewTransactionHistory2.setText("FLYSCOOT.00000000XDP5T3 19 OCT");
+//            this.textViewTransactionPrice2.setText("SGD -838.08");
+//        }
+//    }
+//
+//    private void doGetTravelInsuranceRecommendation() {
 //        Call<GetTravelInsuranceCompanyRecommendationResponse> call1 = api.getTravelInsuranceCompanyRecommendation(MyApp.req1);
 //
 //        call1.enqueue(new Callback<GetTravelInsuranceCompanyRecommendationResponse>() {
@@ -226,7 +295,7 @@ public class HomeActivity extends AppCompatActivity {
 //                t.printStackTrace();
 //            }
 //        });
-    }
+//    }
 
     // Set company logo to recommended companies
     private void setCompanyLogo(String company, ImageView imageView) {
