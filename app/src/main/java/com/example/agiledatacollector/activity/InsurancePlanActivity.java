@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.agiledatacollector.MyApp;
@@ -23,6 +24,7 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,15 +35,18 @@ public class InsurancePlanActivity extends AppCompatActivity {
 
     private TextView textViewSelectedCompany;
     private TextView textViewSelectedCompanySlogan;
+
     private TabLayout tabLayout;
     private CardView cardViewCompanyDescription;
     private TextView textViewCompanyDescription;
+    private CardView linearLayoutInsurancePlans;
 
     private ExpandableListView expandableListView;
     private ExpandableListAdapter expandableListAdapter;
 
     private List<String> listDataHeader;
-    private HashMap<String, List<String>> listDataChild;
+    private HashMap<String, List<String>> listDataChildAttributes;
+    private HashMap<String, List<String>> listDataChildValues;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +57,11 @@ public class InsurancePlanActivity extends AppCompatActivity {
 
         this.textViewSelectedCompany = findViewById(R.id.textViewSelectedCompany);
         this.textViewSelectedCompanySlogan = findViewById(R.id.textViewSelectedCompanySlogan);
+
         this.tabLayout = findViewById(R.id.tabLayout);
         this.cardViewCompanyDescription = findViewById(R.id.cardViewCompanyDescription);
         this.textViewCompanyDescription = findViewById(R.id.textViewCompanyDescription);
+        this.linearLayoutInsurancePlans = findViewById(R.id.linearLayoutInsurancePlans);
 
         this.expandableListView = findViewById(R.id.expandableListView);
 
@@ -88,12 +95,11 @@ public class InsurancePlanActivity extends AppCompatActivity {
                 prepareListData();
 
                 Log.i("List Data Header", listDataHeader.toString());
-                Log.i("List Data Child", listDataChild.toString());
+                Log.i("List Data Child Attributes", listDataChildAttributes.toString());
+                Log.i("List Data Child Values", listDataChildValues.toString());
 
-                expandableListAdapter = new ExpandableListAdapter(InsurancePlanActivity.this, listDataHeader, listDataChild);
+                expandableListAdapter = new ExpandableListAdapter(InsurancePlanActivity.this, listDataHeader, listDataChildAttributes, listDataChildValues);
                 expandableListView.setAdapter(expandableListAdapter);
-
-
             }
 
             @Override
@@ -109,8 +115,10 @@ public class InsurancePlanActivity extends AppCompatActivity {
             public void onTabSelected(TabLayout.Tab tab) {
                 if (tab.getPosition() == 0) {
                     cardViewCompanyDescription.setVisibility(View.VISIBLE);
+                    linearLayoutInsurancePlans.setVisibility(View.GONE);
                 } else {
                     cardViewCompanyDescription.setVisibility(View.GONE);
+                    linearLayoutInsurancePlans.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -131,41 +139,31 @@ public class InsurancePlanActivity extends AppCompatActivity {
      */
     private void prepareListData() {
         listDataHeader = new ArrayList<>();
-        listDataChild = new HashMap<>();
+        listDataChildAttributes = new HashMap<>();
+        listDataChildValues = new HashMap<>();
 
         // Adding child data
-        listDataHeader.add("Top 250");
-        listDataHeader.add("Now Showing");
-        listDataHeader.add("Coming Soon..");
+        listDataHeader.add("Plan 1");
+        listDataHeader.add("Plan 2");
+        listDataHeader.add("Plan 3");
 
-        // Adding child data
-        List<String> top250 = new ArrayList<>();
-        top250.add("The Shawshank Redemption");
-        top250.add("The Godfather");
-        top250.add("The Godfather: Part II");
-        top250.add("Pulp Fiction");
-        top250.add("The Good, the Bad and the Ugly");
-        top250.add("The Dark Knight");
-        top250.add("12 Angry Men");
+        List<String> attributes = new ArrayList<>();
+        attributes.add("Trip Cancellation");
+        attributes.add("Trip Interruption");
+        attributes.add("Trip Delay");
+        attributes.add("Missed Connection");
+        listDataChildAttributes.put(listDataHeader.get(0), attributes);
+        listDataChildAttributes.put(listDataHeader.get(1), attributes);
+        listDataChildAttributes.put(listDataHeader.get(2), attributes);
 
-        List<String> nowShowing = new ArrayList<>();
-        nowShowing.add("The Conjuring");
-        nowShowing.add("Despicable Me 2");
-        nowShowing.add("Turbo");
-        nowShowing.add("Grown Ups 2");
-        nowShowing.add("Red 2");
-        nowShowing.add("The Wolverine");
-
-        List<String> comingSoon = new ArrayList<>();
-        comingSoon.add("2 Guns");
-        comingSoon.add("The Smurfs 2");
-        comingSoon.add("The Spectacular Now");
-        comingSoon.add("The Canyons");
-        comingSoon.add("Europa Report");
-
-        listDataChild.put(listDataHeader.get(0), top250); // Header, Child data
-        listDataChild.put(listDataHeader.get(1), nowShowing);
-        listDataChild.put(listDataHeader.get(2), comingSoon);
+        List<String> values = new ArrayList<>();
+        values.add("100% of insured trip cost");
+        values.add("100% of insured trip cost");
+        values.add("100% of insured trip cost");
+        values.add("100% of insured trip cost");
+        listDataChildValues.put(listDataHeader.get(0), values);
+        listDataChildValues.put(listDataHeader.get(1), values);
+        listDataChildValues.put(listDataHeader.get(2), values);
     }
 
     private void setCompanyDescripton(String selectedCompany) {

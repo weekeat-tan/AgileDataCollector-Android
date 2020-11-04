@@ -16,19 +16,20 @@ import com.example.agiledatacollector.R;
 public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     private Context _context;
-    private List<String> _listDataHeader; // header titles
-    // child data in format of header title, child title
-    private HashMap<String, List<String>> _listDataChild;
+    private List<String> _listDataHeader;
+    private HashMap<String, List<String>> _listDataChildAttributes;
+    private HashMap<String, List<String>> _listDataChildValues;
 
-    public ExpandableListAdapter(Context context, List<String> listDataHeader, HashMap<String, List<String>> listChildData) {
+    public ExpandableListAdapter(Context context, List<String> listDataHeader, HashMap<String, List<String>> listDataChildAttributes, HashMap<String, List<String>> listDataChildValues) {
         this._context = context;
         this._listDataHeader = listDataHeader;
-        this._listDataChild = listChildData;
+        this._listDataChildAttributes = listDataChildAttributes;
+        this._listDataChildValues = listDataChildValues;
     }
 
     @Override
     public Object getChild(int groupPosition, int childPosititon) {
-        return this._listDataChild.get(this._listDataHeader.get(groupPosition)).get(childPosititon);
+        return -1;
     }
 
     @Override
@@ -39,23 +40,26 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     @Override
     public View getChildView(int groupPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
 
-        final String childText = (String) getChild(groupPosition, childPosition);
+        final String childAttribute = this._listDataChildAttributes.get(this._listDataHeader.get(groupPosition)).get(childPosition);
+        final String childValue = this._listDataChildValues.get(this._listDataHeader.get(groupPosition)).get(childPosition);
 
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this._context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = infalInflater.inflate(R.layout.list_item, null);
         }
 
-        TextView txtListChild = (TextView) convertView.findViewById(R.id.lblListItem);
+        TextView textViewPolicyAttribute = (TextView) convertView.findViewById(R.id.textViewPolicyAttribute);
+        TextView textViewPolicyValue = convertView.findViewById(R.id.textViewPolicyValue);
 
-        txtListChild.setText(childText);
+        textViewPolicyAttribute.setText(childAttribute);
+        textViewPolicyValue.setText(childValue);
+
         return convertView;
     }
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        return this._listDataChild.get(this._listDataHeader.get(groupPosition))
-                .size();
+        return this._listDataChildAttributes.get(this._listDataHeader.get(groupPosition)).size();
     }
 
     @Override
