@@ -228,6 +228,7 @@ public class HomeActivity extends AppCompatActivity {
 //        });
     }
 
+    // Set company logo to recommended companies
     private void setCompanyLogo(String company, ImageView imageView) {
         if (company.equals("AIA")) {
             imageView.setImageResource(R.drawable.aia);
