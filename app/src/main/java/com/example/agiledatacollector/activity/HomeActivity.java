@@ -18,8 +18,9 @@ import com.example.agiledatacollector.MyApp;
 import com.example.agiledatacollector.R;
 import com.example.agiledatacollector.api.Api;
 import com.example.agiledatacollector.api.RetrofitClient;
-import com.example.agiledatacollector.model.GetTravelInsuranceCompanyRecommendationRequest;
-import com.example.agiledatacollector.model.GetTravelInsuranceCompanyRecommendationResponse;
+//import com.example.agiledatacollector.model.GetTravelInsuranceCompanyRecommendationRequest;
+//import com.example.agiledatacollector.model.GetTravelInsuranceCompanyRecommendationResponse;
+
 import com.google.android.material.progressindicator.ProgressIndicator;
 
 import java.util.ArrayList;
@@ -92,7 +93,7 @@ public class HomeActivity extends AppCompatActivity {
 
             initializeFlightPurchaseHistory(currentUser);
             // [ AIA AXA Allianze Aviva ]
-            doGetTravelInsuranceRecommendation();
+//            doGetTravelInsuranceRecommendation();
 
             new Handler().postDelayed(() -> {
                 this.progressIndicatorInsuranceRecommendation.setVisibility(View.GONE);
@@ -102,8 +103,8 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void viewTravelInsuranceRecommendation(View view) {
-        Intent intent = new Intent(this, TravelLocationActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, TravelLocationActivity.class);
+//        startActivity(intent);
     }
 
     private void initializeFlightPurchaseHistory(String user) {
@@ -115,17 +116,17 @@ public class HomeActivity extends AppCompatActivity {
             this.textViewAverageExpense.setText(AVG_EXPENSE_TTM.toString());
 
             // Outcome: AIA
-            MyApp.req1 = new GetTravelInsuranceCompanyRecommendationRequest(1001, AVG_INCOME_TTM, AVG_EXPENSE_TTM, ORI_COUNTRY, "China", true, false,
-                    1024.63, 3, "2020/10/22", "2021/02/02", "2021/02/23", 3, "1983/04/24", "1988/09/08", "1993/04/13", "");
+//            MyApp.req1 = new GetTravelInsuranceCompanyRecommendationRequest(1001, AVG_INCOME_TTM, AVG_EXPENSE_TTM, ORI_COUNTRY, "China", true, false,
+//                    1024.63, 3, "2020/10/22", "2021/02/02", "2021/02/23", 3, "1983/04/24", "1988/09/08", "1993/04/13", "");
 
             this.textViewTransactionDate1.setText("MON, 26 OCT 2020");
             this.textViewTransactionHistory1.setText("FLYSCOOT.00000000CDVKH3 22 OCT");
             this.textViewTransactionPrice1.setText("SGD -1024.63");
 
             // Outcome: AXA
-            MyApp.req2 = new GetTravelInsuranceCompanyRecommendationRequest(1002, AVG_INCOME_TTM, AVG_EXPENSE_TTM, ORI_COUNTRY, "Malaysia", false, true,
-                    1685.12, 0, "2020/10/28", "2021/02/08", "2021/02/26", 1, "1982/10/03", "1987/02/26", "1988/03/16", ""
-            );
+//            MyApp.req2 = new GetTravelInsuranceCompanyRecommendationRequest(1002, AVG_INCOME_TTM, AVG_EXPENSE_TTM, ORI_COUNTRY, "Malaysia", false, true,
+//                    1685.12, 0, "2020/10/28", "2021/02/08", "2021/02/26", 1, "1982/10/03", "1987/02/26", "1988/03/16", ""
+//            );
 
             this.textViewTransactionDate2.setText("FRI, 30 OCT 2020");
             this.textViewTransactionHistory2.setText("Singapore Airlines MSIAH8 28 OCT");
@@ -138,17 +139,17 @@ public class HomeActivity extends AppCompatActivity {
             this.textViewAverageExpense.setText(AVG_EXPENSE_TTM.toString());
 
             // Outcome: AIA
-            MyApp.req1 = new GetTravelInsuranceCompanyRecommendationRequest(1003, AVG_INCOME_TTM, AVG_EXPENSE_TTM, ORI_COUNTRY, "United States", true, false,
-                    1782.78, 2, "2020/10/14", "2021/02/07", "2021/03/21", 2, "1974/01/21", "2010/07/09", "", "");
+//            MyApp.req1 = new GetTravelInsuranceCompanyRecommendationRequest(1003, AVG_INCOME_TTM, AVG_EXPENSE_TTM, ORI_COUNTRY, "United States", true, false,
+//                    1782.78, 2, "2020/10/14", "2021/02/07", "2021/03/21", 2, "1974/01/21", "2010/07/09", "", "");
 
             this.textViewTransactionDate1.setText("FRI, 16 OCT 2020");
             this.textViewTransactionHistory1.setText("Qatar Airways QTUS3F 14 OCT");
             this.textViewTransactionPrice1.setText("SGD -1782.78");
 
             // Outcome: Allianze
-            MyApp.req2 = new GetTravelInsuranceCompanyRecommendationRequest(1004, AVG_INCOME_TTM, AVG_EXPENSE_TTM, ORI_COUNTRY, "Taiwan", false, true,
-                    838.08, 0, "2020/10/19", "2021/02/01", "2021/03/26", 3, "2007/12/22", "1987/02/26", "1988/03/16", ""
-            );
+//            MyApp.req2 = new GetTravelInsuranceCompanyRecommendationRequest(1004, AVG_INCOME_TTM, AVG_EXPENSE_TTM, ORI_COUNTRY, "Taiwan", false, true,
+//                    838.08, 0, "2020/10/19", "2021/02/01", "2021/03/26", 3, "2007/12/22", "1987/02/26", "1988/03/16", ""
+//            );
 
             this.textViewTransactionDate2.setText("WED, 21 OCT 2020");
             this.textViewTransactionHistory2.setText("FLYSCOOT.00000000XDP5T3 19 OCT");
@@ -156,78 +157,7 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-    private void doGetTravelInsuranceRecommendation() {
-        Call<GetTravelInsuranceCompanyRecommendationResponse> call1 = api.getTravelInsuranceCompanyRecommendation(MyApp.req1);
-
-        call1.enqueue(new Callback<GetTravelInsuranceCompanyRecommendationResponse>() {
-            @Override
-            public void onResponse(Call<GetTravelInsuranceCompanyRecommendationResponse> call, Response<GetTravelInsuranceCompanyRecommendationResponse> response) {
-                Log.i("  Recommendation ID", MyApp.req1.getId().toString());
-                Log.i("Recommended Company", response.body().getRecommended_company());
-                Log.i("           Prob AIA", response.body().getProb_aia().toString());
-                Log.i("           Prob AXA", response.body().getProb_axa().toString());
-                Log.i("      Prob Allianze", response.body().getProb_allianze().toString());
-                Log.i("         Prob Aviva", response.body().getProb_aviva().toString());
-
-                List<String> companyNamesAdded = new ArrayList<>();
-                MyApp.recommendationResponses.add(response.body());
-                companyNamesAdded.add(response.body().getRecommended_company());
-                setCompanyLogo(response.body().getRecommended_company(), imageViewCompanyLogo1);
-
-                Call<GetTravelInsuranceCompanyRecommendationResponse> call2 = api.getTravelInsuranceCompanyRecommendation(MyApp.req2);
-
-                call2.enqueue(new Callback<GetTravelInsuranceCompanyRecommendationResponse>() {
-                    @Override
-                    public void onResponse(Call<GetTravelInsuranceCompanyRecommendationResponse> call, Response<GetTravelInsuranceCompanyRecommendationResponse> response) {
-                        Log.i("  Recommendation ID", MyApp.req2.getId().toString());
-                        Log.i("Recommended Company", response.body().getRecommended_company());
-                        Log.i("           Prob AIA", response.body().getProb_aia().toString());
-                        Log.i("           Prob AXA", response.body().getProb_axa().toString());
-                        Log.i("      Prob Allianze", response.body().getProb_allianze().toString());
-                        Log.i("         Prob Aviva", response.body().getProb_aviva().toString());
-
-                        MyApp.recommendationResponses.add(response.body());
-                        companyNamesAdded.add(response.body().getRecommended_company());
-                        setCompanyLogo(response.body().getRecommended_company(), imageViewCompanyLogo2);
-
-                        List<ImageView> imageViews = Arrays.asList(imageViewCompanyLogo3, imageViewCompanyLogo4);
-                        List<String> companyNames = Arrays.asList("Allianze", "AXA", "AIA", "Prudential");
-
-                        for (String name : companyNames) {
-                            if (!companyNamesAdded.contains(name)) {
-                                companyNamesAdded.add(name);
-                                setCompanyLogo(name, imageViewCompanyLogo3);
-                                break;
-                            }
-                        }
-
-                        for (String name : companyNames) {
-                            if (!companyNamesAdded.contains(name)) {
-                                companyNamesAdded.add(name);
-                                setCompanyLogo(name, imageViewCompanyLogo4);
-                                break;
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<GetTravelInsuranceCompanyRecommendationResponse> call, Throwable t) {
-                        Log.i("           Recommendation ID", MyApp.req2.getId().toString());
-                        Log.e("Failed to get recommendation", t.getMessage());
-                        t.printStackTrace();
-                    }
-                });
-            }
-
-            @Override
-            public void onFailure(Call<GetTravelInsuranceCompanyRecommendationResponse> call, Throwable t) {
-                Log.i("           Recommendation ID", MyApp.req1.getId().toString());
-                Log.e("Failed to get recommendation", t.getMessage());
-                t.printStackTrace();
-            }
-        });
-    }
-
+    // Set company logo to recommended companies
     private void setCompanyLogo(String company, ImageView imageView) {
         if (company.equals("AIA")) {
             imageView.setImageResource(R.drawable.aia);
