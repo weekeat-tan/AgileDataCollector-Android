@@ -98,7 +98,7 @@ public class InsuranceCompanyActivity extends AppCompatActivity {
         new Handler().postDelayed(() -> {
             this.progressIndicatorInsuranceCompanies.setVisibility(View.GONE);
             this.linearLayoutInsuranceCompanies.setVisibility(View.VISIBLE);
-        }, 5000);
+        }, 1250);
 
         String selectedRequest = getIntent().getExtras().getString("selectedRequest");
         GetTravelInsuranceCompanyRecommendationRequest request = selectedRequest.equals("req1") ? MyApp.req1 : MyApp.req2;
