@@ -97,7 +97,7 @@ public class HomeActivity extends AppCompatActivity {
             new Handler().postDelayed(() -> {
                 this.progressIndicatorInsuranceRecommendation.setVisibility(View.GONE);
                 this.horizontalScrollViewInsuranceRecommendation.setVisibility(View.VISIBLE);
-            }, 5000);
+            }, 1250);
         }
     }
 
