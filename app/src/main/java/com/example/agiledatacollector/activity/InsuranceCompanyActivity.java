@@ -8,22 +8,18 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.agiledatacollector.InsurancePlanActivity;
 import com.example.agiledatacollector.MyApp;
 import com.example.agiledatacollector.R;
 import com.example.agiledatacollector.api.Api;
 import com.example.agiledatacollector.api.RetrofitClient;
 import com.example.agiledatacollector.model.GetTravelInsuranceCompanyRecommendationRequest;
 import com.example.agiledatacollector.model.GetTravelInsuranceCompanyRecommendationResponse;
-import com.example.agiledatacollector.model.GetTravelInsurancePlanRecommendationRequest;
 import com.google.android.material.progressindicator.ProgressIndicator;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -98,7 +94,7 @@ public class InsuranceCompanyActivity extends AppCompatActivity {
         new Handler().postDelayed(() -> {
             this.progressIndicatorInsuranceCompanies.setVisibility(View.GONE);
             this.linearLayoutInsuranceCompanies.setVisibility(View.VISIBLE);
-        }, 1250);
+        }, 1750);
 
         String selectedRequest = getIntent().getExtras().getString("selectedRequest");
         GetTravelInsuranceCompanyRecommendationRequest request = selectedRequest.equals("req1") ? MyApp.req1 : MyApp.req2;
@@ -182,19 +178,19 @@ public class InsuranceCompanyActivity extends AppCompatActivity {
     private void setPriceAndSlogan(TextView textViewCompany, TextView textViewSlogan, TextView textViewPrice) {
         switch (textViewCompany.getText().toString()) {
             case "AIA":
-                textViewSlogan.setText("Travel smart with the protection you choose.");
+                textViewSlogan.setText(getString(R.string.aia_slogan));
                 textViewPrice.setText("128.00 - 226.80");
                 break;
             case "AXA":
-                textViewSlogan.setText("Go conquer the world. Leave the rest to us.");
+                textViewSlogan.setText(getString(R.string.axa_slogan));
                 textViewPrice.setText("71.50 - 171.76");
                 break;
             case "Allianz":
-                textViewSlogan.setText("Well insured by Allianz.");
+                textViewSlogan.setText(getString(R.string.allianz_slogan));
                 textViewPrice.setText("139.00 - 236.00");
                 break;
             default:
-                textViewSlogan.setText("We've got you covered.");
+                textViewSlogan.setText(getString(R.string.aviva_slogan));
                 textViewPrice.setText("142.32 - 304.86");
                 break;
         }
@@ -204,11 +200,11 @@ public class InsuranceCompanyActivity extends AppCompatActivity {
         String selectedCompany = view.getTag().toString();
         String selectedRequest = getIntent().getExtras().getString("selectedRequest");
 
-//        Intent intent = new Intent(this, InsurancePlanActivity.class);
-//        intent.putExtra("selectedRequest", selectedRequest);
-//        intent.putExtra("selectedCompany", selectedCompany);
-//
-//        startActivity(intent);
+        Intent intent = new Intent(this, InsurancePlanActivity.class);
+        intent.putExtra("selectedRequest", selectedRequest);
+        intent.putExtra("selectedCompany", selectedCompany);
+
+        startActivity(intent);
     }
 
 }

@@ -3,4 +3,12 @@
     <string name="user1">weekeat01</string>
     <string name="user2">weekeat02</string>
     <string name="password">password</string>
+    <string name="aia_slogan">Travel smart with the protection you choose.</string>
+    <string name="axa_slogan">Go conquer the world. Leave the rest to us.</string>
+    <string name="allianz_slogan">Well insured by Allianz.</string>
+    <string name="aviva_slogan">We\'ve got you covered.</string>
+    <string name="aia_description">AIA Group Limited, known as AIA (友邦保險), is a Hong Kong multinational insurance and finance corporation. It is the largest public listed life insurance and securities group in Asia-Pacific. It offers insurance and financial services, writing life insurance for individuals and businesses, as well as accident and health insurance, and offers retirement planning, and wealth management services, variable contracts, investments and securities.</string>
+    <string name="axa_description">AXA is a French insurance group, composed of companies that manage life, health and other forms of insurance policy including investment management. The group operates in Western Europe, North America, Asia Pacific and the Middle East.</string>
+    <string name="allianz_description">Allianz has operations in over 70 countries and has around 147,000 employees. The parent company, Allianz SE, is headquartered in Munich, Germany. Allianz has more than 85 million customers worldwide and its services include property and casualty insurance, life and health insurance and asset management.</string>
+    <string name="aviva_description">Aviva plc is a United Kingdom-based holding company that provides life insurance, general insurance and asset management products and services. Aviva Investors provides asset management services to Aviva and external clients.</string>
 </resources>
