@@ -8,22 +8,18 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.agiledatacollector.InsurancePlanActivity;
 import com.example.agiledatacollector.MyApp;
 import com.example.agiledatacollector.R;
 import com.example.agiledatacollector.api.Api;
 import com.example.agiledatacollector.api.RetrofitClient;
 import com.example.agiledatacollector.model.GetTravelInsuranceCompanyRecommendationRequest;
 import com.example.agiledatacollector.model.GetTravelInsuranceCompanyRecommendationResponse;
-import com.example.agiledatacollector.model.GetTravelInsurancePlanRecommendationRequest;
 import com.google.android.material.progressindicator.ProgressIndicator;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;

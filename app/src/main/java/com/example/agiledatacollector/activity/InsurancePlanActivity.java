@@ -1,16 +1,22 @@
-package com.example.agiledatacollector;
+package com.example.agiledatacollector.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
+import com.example.agiledatacollector.MyApp;
+import com.example.agiledatacollector.R;
 import com.example.agiledatacollector.api.Api;
 import com.example.agiledatacollector.api.RetrofitClient;
 import com.example.agiledatacollector.model.GetTravelInsuranceCompanyRecommendationRequest;
 import com.example.agiledatacollector.model.GetTravelInsuranceCompanyRecommendationResponse;
 import com.example.agiledatacollector.model.GetTravelInsurancePlanRecommendationRequest;
 import com.example.agiledatacollector.model.GetTravelInsurancePlanRecommendationResponse;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,13 +30,24 @@ import retrofit2.Response;
 public class InsurancePlanActivity extends AppCompatActivity {
     private Api api;
 
-    // TODO: FINISH UP INSURANCE PLAN!
+    private TextView textViewSelectedCompany;
+    private TextView textViewSelectedCompanySlogan;
+    private TabLayout tabLayout;
+    private CardView cardViewCompanyDescription;
+    private TextView textViewCompanyDescription;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insurance_plan);
 
         this.api = RetrofitClient.getRetrofitInstance().create(Api.class);
+
+        this.textViewSelectedCompany = findViewById(R.id.textViewSelectedCompany);
+        this.textViewSelectedCompanySlogan = findViewById(R.id.textViewSelectedCompanySlogan);
+        this.tabLayout = findViewById(R.id.tabLayout);
+        this.cardViewCompanyDescription = findViewById(R.id.cardViewCompanyDescription);
+        this.textViewCompanyDescription = findViewById(R.id.textViewCompanyDescription);
 
         String selectedRequest = getIntent().getExtras().getString("selectedRequest");
         String selectedCompany = getIntent().getExtras().getString("selectedCompany");
@@ -39,6 +56,8 @@ public class InsurancePlanActivity extends AppCompatActivity {
         if (selectedCompany.equals("Allianz")) {
             selectedCompany = "Allianze";
         }
+
+        setCompanyDescripton(selectedCompany);
 
         GetTravelInsuranceCompanyRecommendationRequest request = selectedRequest.equals("req1") ? MyApp.req1 : MyApp.req2;
 
@@ -80,5 +99,47 @@ public class InsurancePlanActivity extends AppCompatActivity {
                 t.printStackTrace();
             }
         });
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if (tab.getPosition() == 0) {
+                    cardViewCompanyDescription.setVisibility(View.VISIBLE);
+                } else {
+                    cardViewCompanyDescription.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+    }
+
+    private void setCompanyDescripton(String selectedCompany) {
+        switch (selectedCompany) {
+            case "AIA":
+                textViewCompanyDescription.setText(getString(R.string.aia_description));
+                break;
+            case "AXA":
+                textViewCompanyDescription.setText(getString(R.string.axa_description));
+                break;
+            case "Allianz":
+                textViewCompanyDescription.setText(getString(R.string.allianz_description));
+                break;
+            default:
+                textViewCompanyDescription.setText(getString(R.string.aviva_description));
+                break;
+        }
+    }
+
+    public void subscribe(View view) {
+
     }
 }
