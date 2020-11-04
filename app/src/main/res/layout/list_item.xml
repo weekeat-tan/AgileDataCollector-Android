@@ -7,27 +7,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingHorizontal="12dp">
 
         <TextView
             android:id="@+id/textViewPolicyAttribute"
-            android:layout_width="75dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:paddingVertical="6dp"
             android:text="Insurance Plan Details"
+            android:textAlignment="textStart"
             android:textColor="#06253C"
             android:textSize="11dp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textViewPolicyValue"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingVertical="6dp"
             android:text="Insurance Plan Details"
+            android:textAlignment="textStart"
             android:textColor="#144365"
             android:textSize="11dp" />
 

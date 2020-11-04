@@ -94,7 +94,7 @@ public class InsuranceCompanyActivity extends AppCompatActivity {
         new Handler().postDelayed(() -> {
             this.progressIndicatorInsuranceCompanies.setVisibility(View.GONE);
             this.linearLayoutInsuranceCompanies.setVisibility(View.VISIBLE);
-        }, 1250);
+        }, 1750);
 
         String selectedRequest = getIntent().getExtras().getString("selectedRequest");
         GetTravelInsuranceCompanyRecommendationRequest request = selectedRequest.equals("req1") ? MyApp.req1 : MyApp.req2;
@@ -178,19 +178,19 @@ public class InsuranceCompanyActivity extends AppCompatActivity {
     private void setPriceAndSlogan(TextView textViewCompany, TextView textViewSlogan, TextView textViewPrice) {
         switch (textViewCompany.getText().toString()) {
             case "AIA":
-                textViewSlogan.setText("Travel smart with the protection you choose.");
+                textViewSlogan.setText(getString(R.string.aia_slogan));
                 textViewPrice.setText("128.00 - 226.80");
                 break;
             case "AXA":
-                textViewSlogan.setText("Go conquer the world. Leave the rest to us.");
+                textViewSlogan.setText(getString(R.string.axa_slogan));
                 textViewPrice.setText("71.50 - 171.76");
                 break;
             case "Allianz":
-                textViewSlogan.setText("Well insured by Allianz.");
+                textViewSlogan.setText(getString(R.string.allianz_slogan));
                 textViewPrice.setText("139.00 - 236.00");
                 break;
             default:
-                textViewSlogan.setText("We've got you covered.");
+                textViewSlogan.setText(getString(R.string.aviva_slogan));
                 textViewPrice.setText("142.32 - 304.86");
                 break;
         }
