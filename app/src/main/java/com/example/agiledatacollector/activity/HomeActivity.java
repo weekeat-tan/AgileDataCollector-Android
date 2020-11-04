@@ -102,8 +102,8 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void viewTravelInsuranceRecommendation(View view) {
-//        Intent intent = new Intent(this, TravelLocationActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(this, TravelLocationActivity.class);
+        startActivity(intent);
     }
 
     private void initializeFlightPurchaseHistory(String user) {
