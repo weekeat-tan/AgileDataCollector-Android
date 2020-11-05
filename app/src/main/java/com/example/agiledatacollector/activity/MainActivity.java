@@ -12,6 +12,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.agiledatacollector.DataSharingConsentFormActivity;
 import com.example.agiledatacollector.MyApp;
 import com.example.agiledatacollector.R;
 
@@ -64,15 +65,30 @@ public class MainActivity extends AppCompatActivity {
 
             MyApp.sharedPreferences.edit().putString("currentUser", getString(R.string.user1)).apply();
             Toast.makeText(MainActivity.this, "Logged in successfully as " + getString(R.string.user1) + "!", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(this, HomeActivity.class);
-            startActivity(intent);
+
+            if (MyApp.isFirstLogin1) {
+                Intent intent = new Intent(this, DataSharingConsentFormActivity.class);
+                startActivity(intent);
+                MyApp.isFirstLogin1 = false;
+            } else {
+                Intent intent = new Intent(this, HomeActivity.class);
+                startActivity(intent);
+            }
 
         } else if (usernameInput.equals(getString(R.string.user2)) && passwordInput.equals("password")) {
 
+            MyApp.isFirstLogin1 = false;
             MyApp.sharedPreferences.edit().putString("currentUser", getString(R.string.user2)).apply();
             Toast.makeText(MainActivity.this, "Logged in successfully as " + getString(R.string.user2) + "!", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(this, HomeActivity.class);
-            startActivity(intent);
+
+            if (MyApp.isFirstLogin2) {
+                Intent intent = new Intent(this, DataSharingConsentFormActivity.class);
+                startActivity(intent);
+                MyApp.isFirstLogin2 = false;
+            } else {
+                Intent intent = new Intent(this, HomeActivity.class);
+                startActivity(intent);
+            }
 
         } else {
 
@@ -80,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(view.getApplicationWindowToken(),0);
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getApplicationWindowToken(), 0);
     }
 }
