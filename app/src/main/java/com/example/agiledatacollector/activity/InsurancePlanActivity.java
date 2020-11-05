@@ -329,7 +329,7 @@ public class InsurancePlanActivity extends AppCompatActivity {
         Button buttonAcknowledge = dialog.findViewById(R.id.buttonAcknowledge);
 
         buttonAcknowledge.setOnClickListener(view1 -> {
-            Intent intent = new Intent(InsurancePlanActivity.this, MainActivity.class);
+            Intent intent = new Intent(InsurancePlanActivity.this, HomeActivity.class);
             startActivity(intent);
         });
 
