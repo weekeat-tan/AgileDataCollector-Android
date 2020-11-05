@@ -11,9 +11,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.agiledatacollector.DataSharingConsentFormActivity;
 import com.example.agiledatacollector.MyApp;
 import com.example.agiledatacollector.R;
 import com.example.agiledatacollector.api.Api;
@@ -48,6 +50,10 @@ public class HomeActivity extends AppCompatActivity {
     private TextView textViewTransactionHistory2;
     private TextView textViewTransactionPrice2;
 
+    private LinearLayout linearLayoutInsuranceRecommendationOptOut;
+    private LinearLayout linearLayoutInsuranceRecommendation;
+    private LinearLayout linearLayoutInsuranceButtons;
+
     private HorizontalScrollView horizontalScrollViewInsuranceRecommendation;
     private ProgressIndicator progressIndicatorInsuranceRecommendation;
 
@@ -77,6 +83,10 @@ public class HomeActivity extends AppCompatActivity {
         this.textViewTransactionHistory2 = findViewById(R.id.textViewTransactionHistory2);
         this.textViewTransactionPrice2 = findViewById(R.id.textViewTransactionPrice2);
 
+        this.linearLayoutInsuranceRecommendationOptOut = findViewById(R.id.linearLayoutInsuranceRecommendationOptOut);
+        this.linearLayoutInsuranceRecommendation = findViewById(R.id.linearLayoutInsuranceRecommendation);
+        this.linearLayoutInsuranceButtons = findViewById(R.id.linearLayoutInsuranceButtons);
+
         this.horizontalScrollViewInsuranceRecommendation = findViewById(R.id.horizontalScrollViewInsuranceRecommendation);
         this.horizontalScrollViewInsuranceRecommendation.setVisibility(View.GONE);
 
@@ -91,14 +101,56 @@ public class HomeActivity extends AppCompatActivity {
         if (currentUser != null) {
 
             initializeFlightPurchaseHistory(currentUser);
-            // [ AIA AXA Allianze Aviva ]
-            doGetTravelInsuranceRecommendation();
 
-            new Handler().postDelayed(() -> {
-                this.progressIndicatorInsuranceRecommendation.setVisibility(View.GONE);
-                this.horizontalScrollViewInsuranceRecommendation.setVisibility(View.VISIBLE);
-            }, 1750);
+            if (currentUser.equals(getString(R.string.user1))) {
+
+                linearLayoutInsuranceRecommendation.setVisibility(View.INVISIBLE);
+                linearLayoutInsuranceButtons.setVisibility(View.INVISIBLE);
+
+                if (MyApp.isAgreed1) {
+                    linearLayoutInsuranceRecommendation.setVisibility(View.VISIBLE);
+                    linearLayoutInsuranceButtons.setVisibility(View.VISIBLE);
+
+                    // [ AIA AXA Allianze Aviva ]
+                    doGetTravelInsuranceRecommendation();
+
+                    new Handler().postDelayed(() -> {
+                        this.progressIndicatorInsuranceRecommendation.setVisibility(View.GONE);
+                        this.horizontalScrollViewInsuranceRecommendation.setVisibility(View.VISIBLE);
+                    }, 1750);
+                } else {
+
+                    linearLayoutInsuranceRecommendationOptOut.setVisibility(View.VISIBLE);
+                }
+
+            } else {
+
+                linearLayoutInsuranceRecommendation.setVisibility(View.INVISIBLE);
+                linearLayoutInsuranceButtons.setVisibility(View.INVISIBLE);
+
+                if (MyApp.isAgreed2) {
+                    linearLayoutInsuranceRecommendation.setVisibility(View.VISIBLE);
+                    linearLayoutInsuranceButtons.setVisibility(View.VISIBLE);
+
+                    // [ AIA AXA Allianze Aviva ]
+                    doGetTravelInsuranceRecommendation();
+
+                    new Handler().postDelayed(() -> {
+                        this.progressIndicatorInsuranceRecommendation.setVisibility(View.GONE);
+                        this.horizontalScrollViewInsuranceRecommendation.setVisibility(View.VISIBLE);
+                    }, 1750);
+                } else {
+
+                    linearLayoutInsuranceRecommendationOptOut.setVisibility(View.VISIBLE);
+
+                }
+            }
         }
+    }
+
+    public void viewPrivacyPolicy(View view) {
+        Intent intent = new Intent(this, DataSharingConsentFormActivity.class);
+        startActivity(intent);
     }
 
     public void viewTravelInsuranceRecommendation(View view) {

@@ -224,6 +224,51 @@
             android:background="#0C324E"
             app:layout_constraintTop_toBottomOf="@id/linearLayoutTransactionHistory" />
 
+        <LinearLayout
+            android:id="@+id/linearLayoutInsuranceRecommendationOptOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lineSeparatorTransactionHistory">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="Insurance Recommendation"
+                    android:textColor="#042E4C"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="viewPrivacyPolicy"
+                    android:src="@drawable/privacy" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:text="You did not opt-in for data sharing from third party entities!"
+                android:textColor="#0E5080"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
 
         <LinearLayout
             android:id="@+id/linearLayoutInsuranceRecommendation"
@@ -234,14 +279,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/lineSeparatorTransactionHistory">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Insurance Recommendation"
-                android:textColor="#042E4C"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="Insurance Recommendation"
+                    android:textColor="#042E4C"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="viewPrivacyPolicy"
+                    android:src="@drawable/privacy" />
+            </LinearLayout>
 
             <com.google.android.material.progressindicator.ProgressIndicator
                 android:id="@+id/progressIndicatorInsuranceRecommendation"
@@ -307,6 +366,7 @@
             app:layout_constraintTop_toBottomOf="@id/linearLayoutInsuranceRecommendation" />
 
         <LinearLayout
+            android:id="@+id/linearLayoutInsuranceButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

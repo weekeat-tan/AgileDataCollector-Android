@@ -9,6 +9,12 @@ import com.example.agiledatacollector.model.GetTravelInsuranceCompanyRecommendat
 import java.util.List;
 
 public class MyApp extends Application {
+    public static boolean isAgreed1 = true;
+    public static boolean isAgreed2 = true;
+
+    public static boolean isFirstLogin1 = true;
+    public static boolean isFirstLogin2 = true;
+
     public static SharedPreferences sharedPreferences;
 
     public static GetTravelInsuranceCompanyRecommendationRequest req1;
